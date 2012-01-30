@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  android:id="@+id/widget44"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <ImageView
+    android:id="@+id/widget39"
+    android:layout_width="30px"
+    android:layout_height="27px"
+    android:src="@drawable/circle"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true" />
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Hello World, test"
+    />
+</RelativeLayout>
+
