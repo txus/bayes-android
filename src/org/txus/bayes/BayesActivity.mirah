@@ -1,4 +1,4 @@
-package org.txus.test
+package org.txus.bayes
 
 import java.util.ArrayList
 
@@ -7,7 +7,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 
-class TestActivity < Activity
+class BayesActivity < Activity
   def generator
     @generator
   end

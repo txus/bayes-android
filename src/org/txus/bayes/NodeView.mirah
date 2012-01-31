@@ -1,4 +1,4 @@
-package org.txus.test
+package org.txus.bayes
 
 import android.content.Context
 import android.util.Log
@@ -15,8 +15,8 @@ import android.graphics.Canvas
 import android.graphics.Paint
 
 class NodeView < View
-  def self.long_press_threshold
-    2000
+  def self.short_tap_threshold
+    300
   end
 
   def self.active_pointer_id
@@ -47,7 +47,7 @@ class NodeView < View
     @paint.setAntiAlias(true);
     @text_paint = Paint.new
     @text_paint.setARGB(250, 250, 250, 250)
-    @activity = TestActivity(context)
+    @activity = BayesActivity(context)
     @generator = @activity.generator
 
     @name = "(node)"
@@ -83,15 +83,18 @@ class NodeView < View
         return true
       end
     elsif masked_action == MotionEvent.ACTION_UP
+
+      # Calculate short tap
       now = SystemClock.uptimeMillis()
       elapsed = now - @gestureStartTime
       if on_node(event.getX, event.getY) &&
-        (@gestureStartTime > 0.0 && elapsed > NodeView.long_press_threshold)
+        (@gestureStartTime > 0.0 && elapsed < NodeView.short_tap_threshold)
 
-        # Long press
+        # Short tap
         show_menu
       end
       @gestureStartTime = long(0.0)
+
 
       if @generator.on_me(event.getX, event.getY)
         # Destroy node

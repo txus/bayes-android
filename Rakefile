@@ -2,6 +2,6 @@ require "rubygems"
 require "pindah"
 
 Pindah.spec = {
-  :name => "test",
+  :name => "bayes",
   :target_version => "2.2"
 }

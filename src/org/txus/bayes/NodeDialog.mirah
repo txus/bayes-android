@@ -1,4 +1,4 @@
-package org.txus.test
+package org.txus.bayes
 
 import android.app.Dialog;
 import android.content.Context;

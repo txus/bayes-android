@@ -1,4 +1,4 @@
-package org.txus.test
+package org.txus.bayes
 
 import android.app.Activity
 import android.content.Context
@@ -16,7 +16,7 @@ class GeneratorView < View
   def initialize(context:Context)
     super(context)
     @context = context
-    @activity = TestActivity(context)
+    @activity = BayesActivity(context)
 
     @paint = Paint.new
     @paint.setARGB(50, 250, 50, 200)
